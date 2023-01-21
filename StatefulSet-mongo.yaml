@@ -16,12 +16,13 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
         - name: mongo
-          image: mongo:latest
+          image: mongo:4.0
           command:
-          - mongod
-          - "--bind_ip_all"
+          - "--smallfiles"
           - "--replSet"
           - rs0
+          - "--oplogSize"
+          - 128
           ports:
             - containerPort: 27017
           volumeMounts:
