@@ -4,7 +4,7 @@ metadata:
   name: rocketmongo
 spec:
   serviceName: mongo
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: mongo
