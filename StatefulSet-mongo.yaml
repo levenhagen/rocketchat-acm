@@ -32,6 +32,7 @@ spec:
       name: mongo-volume
     spec:
       accessModes: [ "ReadWriteOnce" ]
+      storageClassName: ocs-external-storagecluster-ceph-rbd
       resources:
         requests:
           storage: 5Gi
