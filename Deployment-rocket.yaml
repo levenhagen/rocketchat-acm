@@ -19,7 +19,7 @@ spec:
             - containerPort: 3000
           env:
             - name: MONGO_URL
-              value: mongodb://rocket.rocket:27017/rocketchat
+              value: mongodb://mongo:27017/mydb
             - name: MONGO_OPLOG_URL
-              value: mongodb://rocket.rocket:27017/local?replSet=rs0
+              value: mongodb://mongo:27017/local
           imagePullPolicy: Always
