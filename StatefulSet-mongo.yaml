@@ -18,12 +18,6 @@ spec:
       containers:
         - name: mongo
           image: 'mongo:4.0'
-          command:
-          - mongo 
-          - "--replSet"
-          - rs0
-          - "--oplogSize"
-          - 128
           ports:
             - containerPort: 27017
           volumeMounts:
