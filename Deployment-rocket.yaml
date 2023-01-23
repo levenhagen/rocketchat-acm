@@ -3,7 +3,6 @@ apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
   name: rocketchat
-  namespace: rocket-chat
   labels:
     app: rocketchat
 spec:
