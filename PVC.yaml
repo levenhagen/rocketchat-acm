@@ -11,4 +11,5 @@ spec:
   resources:
     requests:
       storage: 10Gi
- 
+  storageClassName: ocs-external-storagecluster-ceph-rbd
+
