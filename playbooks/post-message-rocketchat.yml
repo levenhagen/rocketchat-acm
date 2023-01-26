@@ -5,4 +5,4 @@
     msg: Testing message from Ansible
   tasks:
     - name: Send notification message via Rocket Chat
-      shell: "curl -X POST -H 'Content-Type: application/json' --data '{\"text\": {{ msg }}  '\" $(date)\"' \"}' http://rocket-chat-rocketchat.apps.playback-next.demo.red-chesterfield.com/hooks/Dvs36vbBQEdEWd2Hs/me6GZqCNXbcGXQpBRYi3sHghgffQw3BucBCnvCReFPFqYLpP"
+      shell: "curl -X POST -H 'Content-Type: application/json' --data '{\"text\":\"Testing message from Ansible at '\" $(date)\"' \"}' http://rocket-chat-rocketchat.apps.playback-next.demo.red-chesterfield.com/hooks/Dvs36vbBQEdEWd2Hs/me6GZqCNXbcGXQpBRYi3sHghgffQw3BucBCnvCReFPFqYLpP"
