@@ -1,6 +1,0 @@
----
-- name: Post message in general channel of rocketchat
-  hosts: localhost
-  tasks:
-    - name: Send notification message via Rocket Chat
-      shell: "curl -X POST -H 'Content-Type: application/json' --data '{\"text\":\"Testing message from Ansible at '\" $(date)\"' \"}' http://rocket-chat-rocketchat.apps.tmm-hub.demo.red-chesterfield.com/hooks/Q79gzAwn8jQMpmrzL/mFPfNAFGxi7AAsn457X3LTNuuDz8oDkiyufKpCzfscg3ah26"
