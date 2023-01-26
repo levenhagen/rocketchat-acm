@@ -4,5 +4,4 @@
   tasks:
     - name: http request to rocketchat
       uri:
-        url: http://rocket-chat-rocketchat.apps.tmm-hub.demo.red-chesterfield.com
-      register: this
+        url: "{{ url }}"
