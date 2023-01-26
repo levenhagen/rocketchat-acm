@@ -2,7 +2,7 @@
 apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleJob
 metadata:
-  name: snow-create-change-record
+  name: RocketChat-Workflow
   labels:
     app.kubernetes.io/name: rocketchat
 spec:
