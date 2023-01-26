@@ -7,6 +7,6 @@ metadata:
     app.kubernetes.io/name: rocketchat
 spec:
   tower_auth_secret: admin-playback-token
-  workflow_template_name: snow-create-change-record
+  workflow_template_name: RocketChat-Workflow
   extra_vars:
     msg: "Hello!"
