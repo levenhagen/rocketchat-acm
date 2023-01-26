@@ -9,4 +9,4 @@ spec:
   tower_auth_secret: admin-playback-token
   workflow_template_name: RocketChat-Workflow
   extra_vars:
-    msg: "RocketChat successfully deployed and API tested!"
+    msg: "Cluster!"
