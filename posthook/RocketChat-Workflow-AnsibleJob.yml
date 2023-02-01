@@ -9,4 +9,6 @@ spec:
   tower_auth_secret: admin-playback-token
   workflow_template_name: RocketChat-Workflow
   extra_vars:
-    msg: "Cluster!"
+    msg: "Hey Hey!"
+  job_tags: "provision,install,configuration"
+  skip_tags: "configuration,restart"
