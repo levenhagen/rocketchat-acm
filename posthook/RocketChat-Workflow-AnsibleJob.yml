@@ -1,14 +1,14 @@
----
-apiVersion: tower.ansible.com/v1alpha1
-kind: AnsibleJob
-metadata:
-  name: RocketChat-Workflow
-  labels:
-    app.kubernetes.io/name: rocketchat
-spec:
-  tower_auth_secret: admin-playback-token
-  workflow_template_name: RocketChat-Workflow
-  extra_vars:
-    msg: "Hey Hey!"
-  job_tags: "provision,install,configuration"
-  skip_tags: "configuration,restart"
+#---
+#apiVersion: tower.ansible.com/v1alpha1
+#kind: AnsibleJob
+#metadata:
+#  name: RocketChat-Workflow
+#  labels:
+#    app.kubernetes.io/name: rocketchat
+#spec:
+#  tower_auth_secret: admin-playback-token
+#  workflow_template_name: RocketChat-Workflow
+#  extra_vars:
+#    msg: "Hey Hey!"
+#  job_tags: "provision,install,configuration"
+#  skip_tags: "configuration,restart"
