@@ -5,5 +5,5 @@ metadata:
   name: ansible-job-volsync
   namespace: aap
 spec:
-  job_template_name: RocketChat Test
+  job_template_name: RocketChat Volsync
   tower_auth_secret: aap2-cred
