@@ -2,7 +2,7 @@
 apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleJob
 metadata:
-  name: ansible-job-volsync
+  name: RocketChat-posthook-AnsibleJob
   namespace: rocketchatapp
   labels:
     app.kubernetes.io/name: rocketchatapp
