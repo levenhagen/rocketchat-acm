@@ -12,7 +12,7 @@ spec:
   extra_vars:
     my_name: rocketchat-backup
     source_pvc: rocketchat-data-claim
-    my_namespace: rocketchat
+    my_namespace: rocketchatapp
     repo: restic-config
     hourly: 6
     daily: 5
