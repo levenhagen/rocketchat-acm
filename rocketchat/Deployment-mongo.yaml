@@ -40,7 +40,6 @@ spec:
             timeoutSeconds: 1
             successThreshold: 3
             failureThreshold: 10
-      restartPolicy: Always
       volumes:
         - name: rocketchat-data-vol
           persistentVolumeClaim:
