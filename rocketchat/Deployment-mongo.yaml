@@ -23,7 +23,9 @@ spec:
           command:
             - /bin/sh
             - -c
-            - mongod --bind_ip 0.0.0.0 --port 27017 --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
+            - >
+              mongod --bind_ip 0.0.0.0 --port 27017 --smallfiles --oplogSize 128
+              --replSet rs0 --storageEngine=mmapv1
           ports:
             - containerPort: 27017
               protocol: TCP
@@ -35,7 +37,9 @@ spec:
               command:
                 - /bin/sh
                 - -c
-                - mongo --eval "rs.initiate({_id: 'rs0', members: [{_id:0, host:'localhost:27017'}]})"
+                - >
+                  mongo --eval "rs.initiate({_id: 'rs0', members:
+                  [{_id: 0, host: 'localhost:27017'}]})"
             initialDelaySeconds: 30
             periodSeconds: 2
             timeoutSeconds: 1
