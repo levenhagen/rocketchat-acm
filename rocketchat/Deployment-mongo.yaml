@@ -18,7 +18,7 @@ spec:
         app: rocketchat-db
     spec:
       securityContext:
-        runAs: 999
+        runAsUser: 999
       containers:
         - name: rocketchat-db
           image: docker.io/mongo:4.0
