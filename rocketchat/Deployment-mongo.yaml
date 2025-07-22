@@ -17,12 +17,9 @@ spec:
       labels:
         app: rocketchat-db
     spec:
-      securityContext:
-        runAsUser: 999
-        fsGroup: 999
       containers:
         - name: rocketchat-db
-          image: docker.io/mongo:4.0
+          image: bitnami/mongo:4.0
           command:
             - /bin/sh
             - -c
