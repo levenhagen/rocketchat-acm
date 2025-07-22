@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: rocketchat-db
-          image: bitnami/mongo:4.0
+          image: bitnami/mongodb:4.0.0
           command:
             - /bin/sh
             - -c
