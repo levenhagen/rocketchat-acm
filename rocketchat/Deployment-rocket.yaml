@@ -1,6 +1,5 @@
----
-apiVersion: apps.openshift.io/v1
-kind: DeploymentConfig
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: rocketchat
   labels:
@@ -8,7 +7,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: rocketchat
+    matchLabels:
+      app: rocketchat
   template:
     metadata:
       labels:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: rocketchat
-          image: rocket.chat:5.4.6
+          image: rocket.chat:2.4.9
           env:
             - name: MONGO_URL
               value: "mongodb://rocket-chat-db:27017/rocketchat"
