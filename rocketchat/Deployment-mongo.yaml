@@ -1,6 +1,6 @@
 ---
-apiVersion: apps.openshift.io/v1
-kind: DeploymentConfig
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: rocketchat-db
   labels:
@@ -8,7 +8,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: rocketchat-db
+    matchLabels:
+      app: rocketchat-db
   strategy:
     type: Recreate
   template:
@@ -16,33 +17,34 @@ spec:
       labels:
         app: rocketchat-db
     spec:
-      securityContext:
-        fsGroup: 999
       containers:
         - name: rocketchat-db
           image: docker.io/mongo:4.0
           command:
             - /bin/sh
-            - -c 
-            - mongod --bind_ip 0.0.0.0 --port 27017 --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
-          volumeMounts:
-            - name: rocketchat-data-vol
-              mountPath: /data/db
+            - -c
+            - >
+              mongod --bind_ip 0.0.0.0 --port 27017 --smallfiles --oplogSize 128
+              --replSet rs0 --storageEngine=mmapv1
           ports:
             - containerPort: 27017
               protocol: TCP
+          volumeMounts:
+            - name: rocketchat-data-vol
+              mountPath: /data/db
           readinessProbe:
             exec:
               command:
-                  - /bin/sh
-                  - -c
-                  - "mongo --eval \"rs.initiate({_id: 'rs0', members: [{_id:0, host:'localhost:27017'}]})\""
+                - /bin/sh
+                - -c
+                - >
+                  mongo --eval "rs.initiate({_id: 'rs0', members:
+                  [{_id: 0, host: 'localhost:27017'}]})"
             initialDelaySeconds: 30
             periodSeconds: 2
             timeoutSeconds: 1
             successThreshold: 3
             failureThreshold: 10
-      restartPolicy: Always
       volumes:
         - name: rocketchat-data-vol
           persistentVolumeClaim:
