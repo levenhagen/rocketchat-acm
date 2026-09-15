@@ -14,3 +14,11 @@ patches:
         value:
           service.beta.kubernetes.io/aws-load-balancer-type: "external"
           service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: "ip"
+          
+  - target:
+      kind: PersistentVolumeClaim
+      name: rocketchat-data-claim
+    patch: |-
+      - op: add
+        path: /spec/storageClassName
+        value: gp2
