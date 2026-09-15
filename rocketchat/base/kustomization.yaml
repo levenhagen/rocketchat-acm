@@ -1,0 +1,6 @@
+resources:
+  - Service-mongo.yaml
+  - Service-rocket.yaml
+  - Deployment-mongo.yaml
+  - Deployment-rocket.yaml
+  - PVC.yaml
