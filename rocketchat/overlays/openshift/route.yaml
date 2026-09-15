@@ -1,10 +1,13 @@
+---
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: rocket-chat
 spec:
+  port:
+    targetPort: 3000
   to:
     kind: Service
     name: rocket-chat
-  port:
-    targetPort: 3000
+    weight: 100
+  wildcardPolicy: None
