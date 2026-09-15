@@ -5,7 +5,7 @@ metadata:
   name: rocket-chat
 spec:
   port:
-    targetPort: 3000
+    targetPort: http
   to:
     kind: Service
     name: rocket-chat
