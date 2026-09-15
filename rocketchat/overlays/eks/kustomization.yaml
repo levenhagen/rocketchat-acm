@@ -1,10 +1,14 @@
 resources:
   - ../../base
+
 patches:
   - target:
       kind: Service
       name: rocket-chat
     patch: |-
+      - op: replace
+        path: /spec/type
+        value: LoadBalancer
       - op: add
         path: /metadata/annotations
         value:
