@@ -1,0 +1,11 @@
+resources:
+  - ../../base
+  - route.yaml
+patches:
+  - target:
+      kind: Service
+      name: rocket-chat
+    patch: |-
+      - op: replace
+        path: /spec/type
+        value: ClusterIP

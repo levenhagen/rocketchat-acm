@@ -1,0 +1,12 @@
+resources:
+  - ../../base
+patches:
+  - target:
+      kind: Service
+      name: rocket-chat
+    patch: |-
+      - op: add
+        path: /metadata/annotations
+        value:
+          service.beta.kubernetes.io/aws-load-balancer-type: "external"
+          service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: "ip"
