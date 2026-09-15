@@ -5,8 +5,9 @@ metadata:
   name: rocket-chat
 spec:
   ports:
-    - protocol: TCP
+    - name: http
       port: 3000
+      protocol: TCP
       targetPort: 3000
   selector:
     app: rocketchat
